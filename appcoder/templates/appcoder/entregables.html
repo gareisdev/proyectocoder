@@ -2,6 +2,31 @@
 
 {% block main_content %}
 
-<h1> Vista de entregables</h1>
+<div class="container mt-5">
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha Entregado</th>
+                <th>Entregado</th>
+                <th>Calificacion Minima</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for entregable in entregables %}
+                <tr>
+                <td>{{entregable.nombre}}</td>
+                <td>{{entregable.fecha_entregado}}</td>
+                <td>{{entregable.entregado}}</td>
+                <td>{{entregable.calificacion_minima}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+</div>
 
 {% endblock main_content %}

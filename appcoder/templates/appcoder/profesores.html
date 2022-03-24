@@ -2,6 +2,31 @@
 
 {% block main_content %}
 
-<h1> Vista de profesores</h1>
+<div class="container mt-5">
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Profesion</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for profesor in profesores %}
+                <tr>
+                <td>{{profesor.nombre}}</td>
+                <td>{{profesor.apellido}}</td>
+                <td>{{profesor.email}}</td>
+                <td>{{profesor.profesion}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+</div>
 
 {% endblock main_content %}

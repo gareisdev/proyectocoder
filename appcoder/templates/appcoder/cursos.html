@@ -2,6 +2,26 @@
 
 {% block main_content %}
 
-<h1> Vista de cursos</h1>
+<div class="container mt-5">
+    <table class="table">
 
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Camada</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for curso in cursos %}
+                <tr>
+                <td>{{curso.nombre}}</td>
+                <td>{{curso.camada}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+</div>
 {% endblock main_content %}
