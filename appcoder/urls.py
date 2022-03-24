@@ -1,10 +1,11 @@
+from unicodedata import name
 from django.urls import path
 from appcoder.views import *
 
 urlpatterns = [
-    path('', inicio),
-    path('estudiantes/', estudiantes),    
-    path('profesores/', profesores, name='Profesores'),    
-    path('cursos/', cursos),    
-    path('entregables/', entregables),
+    path('', inicio, name="Inicio"),
+    path('estudiantes/', estudiantes, name="Estudiantes"),    
+    path('profesores/', profesores, name="Profesores"),    
+    path('cursos/', cursos, name="Cursos"),    
+    path('entregables/', entregables, name="Entregables")
 ]
