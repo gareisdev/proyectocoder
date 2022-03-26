@@ -21,32 +21,29 @@ def profesores(request):
     return render(request, "appcoder/profesores.html", {"profesores": profesores, "title": "Profesores", "page": "Profesores"})
 
 def cursos(request):
+
     cursos = Curso.objects.all()
-
-    return render(request, "appcoder/cursos.html", {"cursos": cursos, "title": "Cursos", "page": "Cursos"})
-
-def entregables(request):
-    entregables = Entregable.objects.all()
-    return render(request, "appcoder/entregables.html", {"entregables":entregables,"title": "Entregables", "page": "Entregables"})
-
-def formulario_curso(request):
 
     if request.method == "POST":
         formulario = CursoFormulario(request.POST)
 
         if formulario.is_valid():
-
             data = formulario.cleaned_data
 
             curso = Curso(data['nombre'], data['camada'])
             curso.save()
+
+            formulario = CursoFormulario()
+            return render(request, "appcoder/cursos.html", {"cursos": cursos, "title": "Cursos", "page": "Cursos", "formulario": formulario})
+    else:   
         
-        return render(request, 'appcoder/index.html')
-
-    else:
         formulario = CursoFormulario()
+        return render(request, "appcoder/cursos.html", {"cursos": cursos, "title": "Cursos", "page": "Cursos", "formulario": formulario})
 
-        return render(request, 'appcoder/formulario_curso.html', {"formulario": formulario})
+def entregables(request):
+    entregables = Entregable.objects.all()
+    return render(request, "appcoder/entregables.html", {"entregables":entregables,"title": "Entregables", "page": "Entregables"})
+
 
 def buscar_curso(request):
 
