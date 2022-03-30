@@ -5,7 +5,7 @@
 {% endif %}
     
 
-<form action="/appcoder/formulariocurso/" method="POST">
+<form action="/appcoder/update_curso/{{camada_id}}/" method="POST">
     {% csrf_token %}
     <table>
         {{formulario.as_table}}

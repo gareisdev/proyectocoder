@@ -27,6 +27,7 @@
             <tr>
                 <th class="table-success">Nombre</th>
                 <th class="table-success">Camada</th>
+                <th class="table-success">Accion</th>
             </tr>
         </thead>
 
@@ -35,6 +36,10 @@
                 <tr>
                 <td>{{curso.nombre}}</td>
                 <td>{{curso.camada}}</td>
+                <td>
+                    <a href="{% url 'eliminarCurso' curso.camada %}">Borrar</a>
+                </td>
+                
                 </tr>
             {% endfor %}
         </tbody>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Cursos</title>
+</head>
+<body>
+    <h1>Cursos disponibles temporada 2022 - Coderhouse</h1>
+
+    <ul>
+        
+        {% for curso in object_list %}
+            <li>
+                <p>Nombre: {{curso.nombre}}</p>
+                <p>
+                    <a href="{%url 'curso_detail' curso.camada%}">Detalle</a>
+                    <a href="{%url 'curso_update' curso.camada%}">Actualizar</a>
+                    <a href="{%url 'curso_delete' curso.camada%}">Borrar</a>
+                    
+                </p>
+            </li>
+        {% endfor %}
+            
+    </ul>
+
+
+    <p>
+        <a href="{% url 'curso_create' %}">Agregar curso</a>
+    </p>
+</body>
+</html>
