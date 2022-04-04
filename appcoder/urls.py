@@ -1,9 +1,16 @@
 from unicodedata import name
 from django.urls import path
 from appcoder.views import *
+from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
     path('', inicio, name="Inicio"),
+
+    path('login/', login_request, name="Login"),
+    path('register/', register_request, name="Register"),
+    path('logout/', LogoutView.as_view(template_name="appcoder/logout.html"), name="Logout"),
+
     path('estudiantes/', estudiantes, name="Estudiantes"),    
     path('profesores/', profesores, name="Profesores"),    
     path('cursos/', cursos, name="Cursos"),    

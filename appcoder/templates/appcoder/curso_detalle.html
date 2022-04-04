@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle</title>
-</head>
-<body>
+{% extends 'appcoder/base.html' %}
     
-    <h1>Informacion del curso</h1>
+{% block main_content %}
 
-    <p>Nombre del curso: {{curso.nombre}}</p>
-    <p>Camada: {{curso.camada}}</p>
-
-    <p>
+<div class="container-sm mt-3">
+    <h1 class="text-center mt-4">Informacion del curso</h1>
+    
+    <p class="text-center">Nombre del curso: {{curso.nombre}}</p>
+    <p class="text-center">Camada: {{curso.camada}}</p>
+    
+    <p class="text-center" >
         <a href="{% url 'curso_list' %}">Regresar</a>
     </p>
+</div>
 
-</body>
-</html>
+{% endblock main_content %}

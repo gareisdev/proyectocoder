@@ -1,0 +1,16 @@
+{% extends 'appcoder/base.html' %}
+
+{% block main_content %}
+
+<div class="container mt-5 text-center">
+    <form method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+
+    </form>
+</div>
+{% endblock main_content %}

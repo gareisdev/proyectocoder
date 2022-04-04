@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Cursos</title>
-</head>
-<body>
-    <h1>Cursos disponibles temporada 2022 - Coderhouse</h1>
+{% extends 'appcoder/base.html' %}
 
-    <ul>
-        
+
+{% block main_content %}
+<h1 class="text-center mt-4">Cursos disponibles temporada 2022 - <span style="color: #e0ff00; text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;">Coderhouse</span></h1>
+
+<div class="container m-5">
+    <div class="card-columns">
         {% for curso in object_list %}
-            <li>
-                <p>Nombre: {{curso.nombre}}</p>
-                <p>
-                    <a href="{%url 'curso_detail' curso.camada%}">Detalle</a>
-                    <a href="{%url 'curso_update' curso.camada%}">Actualizar</a>
-                    <a href="{%url 'curso_delete' curso.camada%}">Borrar</a>
-                    
-                </p>
-            </li>
+        <div class="card text-center p-3 m-3">
+            <div class="card-body">
+                <h5 class="card-title">{{curso.nombre}}</h5>
+                <a class="card-link" href="{%url 'curso_detail' curso.camada%}">Detalle</a> |
+                <a class="card-link" href="{%url 'curso_update' curso.camada%}">Actualizar</a> |
+                <a class="card-link" href="{%url 'curso_delete' curso.camada%}">Borrar</a>
+            </div>
+        </div>
         {% endfor %}
-            
-    </ul>
+    </div>
+</div>
 
+<div class="container">
+    <a class="btn btn-primary btn-sm" href="{% url 'curso_create' %}">Agregar curso</a>
+</div>
 
-    <p>
-        <a href="{% url 'curso_create' %}">Agregar curso</a>
-    </p>
-</body>
-</html>
+{% endblock main_content %}

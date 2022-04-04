@@ -72,6 +72,12 @@
         </header>
 
        
+        {% if errors %}
+            {% for error in errors %}
+                {{error}}
+            {% endfor %}
+        {% endif %}
+
         {% block main_content %}
             <h2>Hola mundo</h2>
             <h2>Hola mundo 2</h2>
