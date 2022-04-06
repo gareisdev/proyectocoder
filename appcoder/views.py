@@ -22,12 +22,16 @@ from django.contrib.auth.decorators import login_required
 
 
 def inicio(request):
-    avatar = Avatar.objects.filter(user=request.user)
 
-    if len(avatar) > 0:
-        imagen = avatar[0].imagen.url
+    if request.user.username:
+        avatar = Avatar.objects.filter(user=request.user)
 
-
+        if len(avatar) > 0:
+            imagen = avatar[0].imagen.url
+        else:
+            imagen = None
+    else:
+        imagen = None
     dict_ctx = {"title": "Inicio", "page": "Inicio", "imagen_url": imagen}
     return render(request, "appcoder/index.html", dict_ctx)
 
