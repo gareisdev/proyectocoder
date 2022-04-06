@@ -24,6 +24,9 @@ urlpatterns = [
     path("curso/nuevo/", CursoCrear.as_view(), name="curso_create"),
     path("curso/detalle/<pk>/", CursoDetalle.as_view(), name="curso_detail"),
     path("curso/editar/<pk>/", CursoActualizar.as_view(), name="curso_update"),
-    path("curso/borrar/<pk>/", CursoBorrar.as_view(), name="curso_delete")
+    path("curso/borrar/<pk>/", CursoBorrar.as_view(), name="curso_delete"),
 
+    path("actualizar_usuario/", actualizar_usuario, name="EditarUsuario"),
+
+    path("cargar_imagen/", cargar_imagen, name="CargarImagen")
 ]

@@ -5,6 +5,13 @@
         <a class="navbar-brand" href="{% url 'Profesores' %}">Profesores</a>
         <a class="navbar-brand" href="{% url 'Cursos' %}">Cursos</a>
         <a class="navbar-brand" href="{% url 'Entregables' %}">Entregables</a>
-        <a class="btn btn-primary" href="#signup">Sign Up</a>
+
+        {% if not request.user.is_authenticated %}
+            <a class="btn btn-primary" href="{% url 'Login' %}">Iniciar sesion</a>
+        {% else %}
+            <p class="text-muted small mb-4"> {{request.user.username}} </p>
+        {% endif %}
+
+        
     </div>
 </nav>
