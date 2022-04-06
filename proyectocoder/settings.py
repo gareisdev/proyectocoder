@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-lp38vlm-xgm#8_-_#qioy4*=0^&6=6w7f*(!x^lc#yi(#o+lbn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["still-tundra-59588.herokuapp.com"]
+ALLOWED_HOSTS = ["desolate-plains-90241.herokuapp.com"]
 
 
 # Application definition
